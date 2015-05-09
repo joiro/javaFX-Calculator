@@ -36,13 +36,13 @@ public class MainViewController {
 	@FXML
 	public void handleClick(Event event){
 		String number;
-		//number = temporary.get(operatorCount);
-		//System.out.println("number: "+number);
 		actualText = display.getText();
+		System.out.println("display: "+display.getText());
 		if (display.getText() == "0"){
 			buttonDelete.setText("C");
 			display.setText("");
-			actualText = "";
+			System.out.println("actualText: "+actualText);
+			actualText = "";	
 		}
 		Button btn = (Button) event.getSource();
 		switch(btn.getId()) {
@@ -118,19 +118,19 @@ public class MainViewController {
 			tempNumber += i;
 		}
 		allNumbers.add(Double.parseDouble(tempNumber));
+		System.out.println("numbersEntered: "+temporary);
 		tempNumber = "";
 		temporary.clear();
 	}
 	
 	@FXML public void operation(Event event) {
 		storeTemporary();
-		System.out.println("numbersEntered: "+temporary);
+		
 		operatorCount ++;
 		System.out.println("operatorCount: "+operatorCount);
 		if (display.getText() != ""){
 			actualText = display.getText();
 			operatorClicked = true;
-			System.out.println("operatorClicked: "+operatorClicked);
 		}
 		Button btn = (Button) event.getSource();
 		String operation = btn.getId();
@@ -152,6 +152,10 @@ public class MainViewController {
 			dividedOperation = true;
 			break;
 		}
+	}
+	
+	@FXML public void makeFloat(){
+		
 	}
 	
 	@FXML public void changeSign() {
@@ -185,4 +189,3 @@ public class MainViewController {
 		display.setText(Double.toString(result));
 	}
 }
-
