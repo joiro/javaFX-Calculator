@@ -1,8 +1,17 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
-.textField {
+.text-area {
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 25px;
+	-fx-font-family: "Helvetica Neue Light";
+}
+
+.text-area .content {
 	-fx-background-color: grey;
-	-fx-font-family: "Helvetica Neue UltraLight";
+}
+
+.text-area *.text {
+	-fx-text-alignment: right;
 }
 
 .button {
