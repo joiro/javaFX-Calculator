@@ -140,12 +140,16 @@ public class MainViewController {
 		String temp1 = Double.toString(temporary[1]);
 		if (operator[1]){
 			result = temporary[0] + temporary[1];
+			operator[1] = false;
 		} else if (operator[2]){
 			result = temporary[0] - temporary[1];
+			operator[2] = false;
 		} else if (operator[3]){
 			result = temporary[0] * temporary[1];
+			operator[3] = false;
 		} else if (operator[4]){
 			result = temporary[0] / temporary[1];
+			operator[4] = false;
 		}
 		System.out.println("result: "+result);
 		display.setText(Double.toString(result));
